@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useReducer, useState } from 'react';
-import reducer, { ADICIONAR_FRASE } from './reducer';
+import reducer, { ADICIONAR_FRASE, EXCLUIR_FRASE } from './reducer';
 
 function App() {
 
@@ -13,6 +13,13 @@ function App() {
     dispatch({
       tipo: ADICIONAR_FRASE,
       frase
+    })
+  }
+
+  function excluir(fraseExcluida) {
+    dispatch({
+      tipo: EXCLUIR_FRASE,
+      frase: fraseExcluida
     })
   }
 
@@ -28,7 +35,7 @@ function App() {
         <br />
         <button>Salvar frase</button>
       </form>
-      {frases.map((fraseAtual, index) => <p key={index}>{fraseAtual}</p>)}
+      {frases.map((fraseAtual, index) => <p key={index}>{fraseAtual} - <button onClick={() => excluir(frase)}>excluir</button></p>)}
     </div>
   );
 }
