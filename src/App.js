@@ -2,22 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  // lista de frases (estado)
+
+  //usuário pode adicionar novas frases, desde, que:
+  // a frase possua mais do que 20 caracteres
+
+  //a frase seja única
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bem-vindo ao mundo do useReducer!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form>
+        <textarea />
+        <br />
+        <button>Salvar frase</button>
+      </form>
     </div>
   );
 }
